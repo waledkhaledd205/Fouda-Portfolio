@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed Fouda | GIS & Surveying Specialist</title>
+
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description"
+    content="Professional portfolio of Ahmed Fouda, a GIS and Surveying graduate specializing in GIS, surveying, mapping, and geographic data analysis.">
+  <meta name="keywords"
+    content="Ahmed Fouda, GIS Specialist, Surveying Specialist, Geographic Information Systems, Cartography, Mapping, Dakahlia, Egypt, Mansoura University">
+  <meta name="author" content="Ahmed Fouda">
+  <meta property="og:title" content="Ahmed Fouda | GIS & Surveying Specialist">
+  <meta property="og:description"
+    content="Professional portfolio of Ahmed Fouda, a GIS and Surveying graduate specializing in GIS, surveying, mapping, and geographic data analysis.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta name="theme-color" content="#0b172a">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polygon points='16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76'/></svg>">
+
+  <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Topographic Contour Background Canvas -->
+  <canvas id="topoCanvas" class="topo-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo" aria-label="Ahmed Fouda Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-dasharray="2 2" />
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor"
+              fill-opacity="0.2" />
+            <circle cx="12" cy="12" r="2" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Ahmed Fouda</span>
+          <span class="brand-role">GIS & Surveying</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#training" class="nav-link">Training</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="1" y2="3"></line>
+            <line x1="12" y1="21" x2="1" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button id="mobileMenuBtn" class="hamburger-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="home" class="hero-section">
+      <div class="container hero-container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+
+        <!-- هيدر الهيرو: بيقسم المساحة لنصفين (النص يمين والصورة شمال أو العكس حسب الاتجاه) -->
+        <div class="hero-main-wrapper"
+          style="display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: nowrap;">
+
+          <!-- قسم النصوص والـ Badges -->
+          <div class="hero-text-side" style="flex: 1;">
+
+            <div class="hero-hud-row reveal" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+              <div class="hud-badge" style="display: flex; align-items: center; gap: 8px;">
+                <span class="hud-pulse"></span>
+                <span class="hud-text">Dakahlia, Egypt</span>
+              </div>
+              <div class="hud-badge hud-badge-alt" style="display: flex; align-items: center; gap: 8px;">
+                <svg class="hud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                  height="16">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>Military Status: Completed</span>
+              </div>
+            </div>
+
+            <p class="hero-eyebrow reveal">
+              <span class="topo-dot"></span>
+              Specialized in Spatial Analysis & Cartography
+            </p>
+            <h1 class="hero-title reveal" style="font-size: clamp(2.5rem, 5vw, 4rem); margin: 10px 0;">
+              Ahmed Fouda
+            </h1>
+            <h2 class="hero-subtitle reveal" style="color: #38bdf8; margin-bottom: 15px;">
+              GIS & Surveying Specialist
+            </h2>
+            <p class="hero-description reveal" style="max-width: 600px; line-height: 1.6; margin-bottom: 25px;">
+              GIS and Surveying graduate with practical knowledge in geographic data analysis, mapping, surveying, and
+              geographic information systems.
+            </p>
+
+            <div class="hero-actions reveal" style="display: flex; gap: 15px; margin-bottom: 30px;">
+              <a href="#projects" class="btn btn-primary"
+                style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #0284c7; color: #fff; border-radius: 8px; text-decoration: none;">
+                <span>View Projects</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn-secondary"
+                style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Contact Me</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- -->
+          <div class="hero-image-side reveal"
+            style="flex-shrink: 0; display: flex; justify-content: center; align-items: center;">
+            <div class="profile-img-wrapper"
+              style="width: 240px; height: 240px; border-radius: 50%; padding: 5px; background: linear-gradient(135deg, #0284c7, #10b981); box-shadow: 0 0 30px rgba(2, 132, 199, 0.3);">
+              <img src="WhatsApp Image 2026-09-01 at 6.16.39 PM.jpeg" alt="Ahmed Fouda"
+                style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;">
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Metrics / Pillars  -->
+        <div class="hero-metrics-grid reveal"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px;">
+
+          <div class="metric-card"
+            style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); padding: 20px; border-radius: var(--radius-md); transition: var(--transition-normal);">
+            <div class="metric-info">
+              <span class="metric-value"
+                style="display: block; font-weight: bold; font-size: 1.1rem; color: var(--text-main);">Mansoura
+                Univ.</span>
+              <span class="metric-label" style="font-size: 0.85rem; color: var(--text-muted);">B.A. in Surveying &
+                GIS</span>
+            </div>
+          </div>
+
+          <div class="metric-card"
+            style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); padding: 20px; border-radius: var(--radius-md); transition: var(--transition-normal);">
+            <div class="metric-info">
+              <span class="metric-value"
+                style="display: block; font-weight: bold; font-size: 1.1rem; color: var(--text-main);">Very Good</span>
+              <span class="metric-label" style="font-size: 0.85rem; color: var(--text-muted);">Graduation Grade
+                (2023)</span>
+            </div>
+          </div>
+
+          <div class="metric-card"
+            style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); padding: 20px; border-radius: var(--radius-md); transition: var(--transition-normal);">
+            <div class="metric-info">
+              <span class="metric-value"
+                style="display: block; font-weight: bold; font-size: 1.1rem; color: var(--text-main);">Field &
+                Site</span>
+              <span class="metric-label" style="font-size: 0.85rem; color: var(--text-muted);">Contracting &
+                Surveying</span>
+            </div>
+          </div>
+
+          <div class="metric-card"
+            style="background: var(--bg-card); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); padding: 20px; border-radius: var(--radius-md); transition: var(--transition-normal);">
+            <div class="metric-info">
+              <span class="metric-value"
+                style="display: block; font-weight: bold; font-size: 1.1rem; color: var(--text-main);">Arabic &
+                English</span>
+              <span class="metric-label" style="font-size: 0.85rem; color: var(--text-muted);">Native &
+                Intermediate</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section about-section">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>Profile Overview</span>
+          </div>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">Bridging spatial science, surveying precision, and practical civil applications.
+          </p>
+        </div>
+
+        <div class="about-grid">
+
+          <!-- Column 1: Profile & Meta Card -->
+          <div class="about-card-col reveal">
+            <div class="profile-card">
+              <div class="profile-header">
+                <div class="profile-avatar-wrap">
+                  <div class="avatar-gis-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                  </div>
+                  <span class="status-indicator" title="Available for work"></span>
+                </div>
+                <div class="profile-meta">
+                  <h3 class="profile-name">Ahmed Fouda</h3>
+                  <p class="profile-role">GIS & Surveying Specialist</p>
+                  <span class="profile-location">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Dakahlia, Egypt
+                  </span>
+                </div>
+              </div>
+
+              <div class="profile-details-list">
+                <div class="detail-row">
+                  <span class="detail-label">Military Status</span>
+                  <span class="detail-val badge-green">Completed</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Education</span>
+                  <span class="detail-val">B.A. Surveying, Maps & GIS</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">University</span>
+                  <span class="detail-val">Mansoura University (2023)</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Academic Grade</span>
+                  <span class="detail-val badge-blue">Very Good</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Languages</span>
+                  <span class="detail-val">Arabic (Native), English (Intermediate)</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Email</span>
+                  <a href="mailto:fouda2563@gmail.com" class="detail-val link-text">fouda2563@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="profile-card-footer">
+                <a href="#contact" class="btn btn-sm btn-primary w-full">Get In Touch</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Narrative & Focus Domains -->
+          <div class="about-narrative-col reveal">
+            <div class="narrative-card">
+              <h3 class="narrative-title">Professional Background & Spatial Expertise</h3>
+
+              <p class="narrative-p">
+                I am a dedicated <strong>GIS & Surveying Specialist</strong> who graduated from the Faculty of Arts at
+                Mansoura University with a <strong>Very Good</strong> grade in Surveying, Maps, and Geographic
+                Information Systems.
+              </p>
+
+              <p class="narrative-p">
+                My academic training and hands-on site experience equip me with a strong foundation in <strong>GIS
+                  software</strong>, <strong>data analysis</strong>, <strong>geographic data utilization</strong>, and
+                precision <strong>surveying instruments</strong>. I specialize in translating complex geographic
+                datasets into actionable spatial insights and accurate cartographic representations.
+              </p>
+
+              <!-- Domain Highlights Grid -->
+              <div class="domains-grid">
+                <div class="domain-item">
+                  <div class="domain-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                      <line x1="8" y1="2" x2="8" y2="18"></line>
+                      <line x1="16" y1="6" x2="16" y2="22"></line>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>GIS & Spatial Systems</h4>
+                    <p>Spatial modeling, geographic layer processing, attribute linking, and GIS workflows.</p>
+                  </div>
+                </div>
+
+                <div class="domain-item">
+                  <div class="domain-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <line x1="12" y1="3" x2="12" y2="7"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                      <line x1="3" y1="12" x2="7" y2="12"></line>
+                      <line x1="17" y1="12" x2="21" y2="12"></line>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Surveying & Instruments</h4>
+                    <p>Optical leveling (LEVEL), benchmark elevation referencing, and ground control points.</p>
+                  </div>
+                </div>
+
+                <div class="domain-item">
+                  <div class="domain-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="18" y1="20" x2="18" y2="10"></line>
+                      <line x1="12" y1="20" x2="12" y2="4"></line>
+                      <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Geographic Data Analysis</h4>
+                    <p>Investigating spatial patterns, thematic evaluation, and tabular data synthesis.</p>
+                  </div>
+                </div>
+
+                <div class="domain-item">
+                  <div class="domain-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Construction Applications</h4>
+                    <p>Applying surveying and GIS methodologies directly within contracting and site development.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>Core Competencies</span>
+          </div>
+          <h2 class="section-title">Skills & Capabilities</h2>
+          <p class="section-subtitle">Verified technical capabilities and collaborative interpersonal strengths.</p>
+        </div>
+
+        <!-- Technical Skills Category -->
+        <div class="skills-category-block reveal">
+          <div class="category-header">
+            <div class="category-title-wrap">
+              <span class="category-pill">Category 01</span>
+              <h3 class="category-title">Technical Skills</h3>
+            </div>
+            <p class="category-desc">Practical proficiency in spatial systems, surveying tools, and data processing
+              suites.</p>
+          </div>
+
+          <div class="technical-skills-grid">
+
+            <!-- 1. GIS Software -->
+            <div class="tech-card">
+              <div class="tech-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <h4 class="tech-card-title">GIS Software</h4>
+              <p class="tech-card-desc">Spatial data management, layer integration, vector processing, and thematic
+                cartographic production.</p>
+              <div class="tech-tag">Spatial Systems</div>
+            </div>
+
+            <!-- 2. Data Analysis -->
+            <div class="tech-card">
+              <div class="tech-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <h4 class="tech-card-title">Data Analysis</h4>
+              <p class="tech-card-desc">Extracting insights from structured datasets, spatial distributions, and
+                demographic/geographic parameters.</p>
+              <div class="tech-tag">Analytical Methods</div>
+            </div>
+
+            <!-- 3. Geographic Data Utilization -->
+            <div class="tech-card">
+              <div class="tech-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                  </path>
+                </svg>
+              </div>
+              <h4 class="tech-card-title">Geographic Data Utilization</h4>
+              <p class="tech-card-desc">Effective handling of coordinate reference systems, tabular geographic data, and
+                spatial querying.</p>
+              <div class="tech-tag">Geo-Data</div>
+            </div>
+
+            <!-- 4. Surveying -->
+            <div class="tech-card">
+              <div class="tech-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                  <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                </svg>
+              </div>
+              <h4 class="tech-card-title">Surveying</h4>
+              <p class="tech-card-desc">Field measurements, topographic mapping, land surveying methodologies, and
+                boundary determination.</p>
+              <div class="tech-tag">Field Survey</div>
+            </div>
+
+            <!-- 5. Surveying Instruments -->
+            <div class="tech-card">
+              <div class="tech-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="m4.93 4.93 4.24 4.24"></path>
+                  <path d="m14.83 14.83 4.24 4.24"></path>
+                  <path d="m14.83 9.17 4.24-4.24"></path>
+                  <path d="m4.93 19.07 4.24-4.24"></path>
+                </svg>
+              </div>
+              <h4 class="tech-card-title">Surveying Instruments</h4>
+              <p class="tech-card-desc">Operation of optical LEVEL equipment, leveling rods, elevation benchmarking, and
+                instrument calibration.</p>
+              <div class="tech-tag">Equipment Operation</div>
+            </div>
+
+            <!-- 6. Microsoft Word -->
+            <div class="tech-card">
+              <div class="tech-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </div>
+              <h4 class="tech-card-title">Microsoft Word</h4>
+              <p class="tech-card-desc">Authoring technical surveying reports, academic research documentation, and
+                project proposals.</p>
+              <div class="tech-tag">Office Suite</div>
+            </div>
+
+            <!-- 7. Microsoft Excel -->
+            <div class="tech-card">
+              <div class="tech-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="3" y1="15" x2="21" y2="15"></line>
+                  <line x1="9" y1="3" x2="9" y2="21"></line>
+                  <line x1="15" y1="3" x2="15" y2="21"></line>
+                </svg>
+              </div>
+              <h4 class="tech-card-title">Microsoft Excel</h4>
+              <p class="tech-card-desc">Survey data computation, elevation calculations, coordinate formatting, and
+                tabular data transformation.</p>
+              <div class="tech-tag">Data Processing</div>
+            </div>
+
+            <!-- 8. Microsoft PowerPoint -->
+            <div class="tech-card">
+              <div class="tech-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h4 class="tech-card-title">Microsoft PowerPoint</h4>
+              <p class="tech-card-desc">Designing visual presentations for GIS findings, project defenses, and
+                cartography showcases.</p>
+              <div class="tech-tag">Presentations</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Soft Skills Category -->
+        <div class="skills-category-block reveal">
+          <div class="category-header">
+            <div class="category-title-wrap">
+              <span class="category-pill category-pill-alt">Category 02</span>
+              <h3 class="category-title">Soft Skills</h3>
+            </div>
+            <p class="category-desc">Professional attributes that drive team synergy, site safety, and project success.
+            </p>
+          </div>
+
+          <div class="soft-skills-grid">
+
+            <!-- 1. Teamwork -->
+            <div class="soft-card">
+              <div class="soft-card-top">
+                <div class="soft-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <span class="soft-num">01</span>
+              </div>
+              <h4 class="soft-title">Teamwork</h4>
+              <p class="soft-desc">Seamless collaboration with site engineers, survey crews, and academic research
+                groups.</p>
+            </div>
+
+            <!-- 2. Problem-solving -->
+            <div class="soft-card">
+              <div class="soft-card-top">
+                <div class="soft-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                    </path>
+                  </svg>
+                </div>
+                <span class="soft-num">02</span>
+              </div>
+              <h4 class="soft-title">Problem-solving</h4>
+              <p class="soft-desc">Resolving field discrepancies, coordinate misalignments, and spatial data anomalies.
+              </p>
+            </div>
+
+            <!-- 3. Leadership -->
+            <div class="soft-card">
+              <div class="soft-card-top">
+                <div class="soft-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                    </polygon>
+                  </svg>
+                </div>
+                <span class="soft-num">03</span>
+              </div>
+              <h4 class="soft-title">Leadership</h4>
+              <p class="soft-desc">Guiding group research assignments and coordinating field leveling exercises with
+                clarity.</p>
+            </div>
+
+            <!-- 4. Creativity -->
+            <div class="soft-card">
+              <div class="soft-card-top">
+                <div class="soft-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                  </svg>
+                </div>
+                <span class="soft-num">04</span>
+              </div>
+              <h4 class="soft-title">Creativity</h4>
+              <p class="soft-desc">Innovating cartographic design, thematic map symbology, and intuitive layout
+                presentation.</p>
+            </div>
+
+            <!-- 5. Time Management -->
+            <div class="soft-card">
+              <div class="soft-card-top">
+                <div class="soft-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <span class="soft-num">05</span>
+              </div>
+              <h4 class="soft-title">Time Management</h4>
+              <p class="soft-desc">Meeting tight project deadlines, field survey schedules, and university deliverable
+                targets.</p>
+            </div>
+
+            <!-- 6. Communication -->
+            <div class="soft-card">
+              <div class="soft-card-top">
+                <div class="soft-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+                <span class="soft-num">06</span>
+              </div>
+              <h4 class="soft-title">Communication</h4>
+              <p class="soft-desc">Articulating geographic findings, cartographic legends, and leveling notes
+                effectively.</p>
+            </div>
+
+            <!-- 7. Responsibility -->
+            <div class="soft-card">
+              <div class="soft-card-top">
+                <div class="soft-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <span class="soft-num">07</span>
+              </div>
+              <h4 class="soft-title">Responsibility</h4>
+              <p class="soft-desc">Rigorous commitment to instrument care, data accuracy, safety protocols, and
+                accountability.</p>
+            </div>
+
+            <!-- 8. Flexibility -->
+            <div class="soft-card">
+              <div class="soft-card-top">
+                <div class="soft-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 3 21 3 21 8"></polyline>
+                    <line x1="4" y1="20" x2="21" y2="3"></line>
+                    <polyline points="21 16 21 21 16 21"></polyline>
+                    <line x1="15" y1="15" x2="21" y2="21"></line>
+                    <line x1="4" y1="4" x2="9" y2="9"></line>
+                  </svg>
+                </div>
+                <span class="soft-num">08</span>
+              </div>
+              <h4 class="soft-title">Flexibility</h4>
+              <p class="soft-desc">Adapting smoothly between office spatial analysis and challenging on-site field
+                environments.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>Portfolio Showcase</span>
+          </div>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Academic and applied GIS initiatives developed during university studies and
+            practical training.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: GIS Academic Project -->
+          <div class="project-card reveal" data-project-id="1">
+            <div class="project-header">
+              <div class="project-badge">Academic Project</div>
+              <span class="project-meta-tag">GIS & Mapping</span>
+            </div>
+            <div class="project-body">
+              <div class="project-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                  <line x1="8" y1="2" x2="8" y2="18"></line>
+                  <line x1="16" y1="6" x2="16" y2="22"></line>
+                </svg>
+              </div>
+              <h3 class="project-title">GIS Academic Project</h3>
+              <p class="project-summary">
+                Comprehensive university spatial study developed during degree studies, focusing on geographic data
+                analysis, layer integration, and thematic map production.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-dot"></span>
+                  <span>Spatial data modeling & thematic map creation</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-dot"></span>
+                  <span>Geographic dataset synthesis and presentation</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">GIS Software</span>
+                <span class="tag">Data Analysis</span>
+                <span class="tag">Cartography</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn-link project-detail-btn" data-project="1">
+                <span>View Details</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 2: GIS-Based Application -->
+          <div class="project-card reveal" data-project-id="2">
+            <div class="project-header">
+              <div class="project-badge">Applied System</div>
+              <span class="project-meta-tag">GIS Application</span>
+            </div>
+            <div class="project-body">
+              <div class="project-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3 class="project-title">GIS-Based Application</h3>
+              <p class="project-summary">
+                Contributed to university projects developing GIS-based applications designed to organize, query, and
+                visualize geographic information effectively.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-dot"></span>
+                  <span>Geographic data organization & query structures</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-dot"></span>
+                  <span>Spatial feature representation & user workflows</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">GIS Application</span>
+                <span class="tag">Geographic Data</span>
+                <span class="tag">System Design</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn-link project-detail-btn" data-project="2">
+                <span>View Details</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 3: Geographic Data Analysis -->
+          <div class="project-card reveal" data-project-id="3">
+            <div class="project-header">
+              <div class="project-badge">Research Project</div>
+              <span class="project-meta-tag">Data Modeling</span>
+            </div>
+            <div class="project-body">
+              <div class="project-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="project-title">Geographic Data Analysis</h3>
+              <p class="project-summary">
+                Spatial analysis project investigating geographic patterns, tabular data correlation, and regional
+                spatial phenomena using structured analytical methods.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-dot"></span>
+                  <span>Correlation between spatial factors and attributes</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-dot"></span>
+                  <span>Analytical charts and Microsoft Excel data integration</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">Data Analysis</span>
+                <span class="tag">Microsoft Excel</span>
+                <span class="tag">Spatial Trends</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn-link project-detail-btn" data-project="3">
+                <span>View Details</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 4: Mapping & Cartography Project -->
+          <div class="project-card reveal" data-project-id="4">
+            <div class="project-header">
+              <div class="project-badge">Cartography</div>
+              <span class="project-meta-tag">Survey & Mapping</span>
+            </div>
+            <div class="project-body">
+              <div class="project-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              </div>
+              <h3 class="project-title">Mapping & Cartography Project</h3>
+              <p class="project-summary">
+                Detailed cartographic project focused on precision map layouts, coordinate referencing, topographic
+                contour representation, and survey data integration.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <span class="highlight-dot"></span>
+                  <span>Topographic map design & contour interpretation</span>
+                </div>
+                <div class="highlight-item">
+                  <span class="highlight-dot"></span>
+                  <span>Survey measurements correlation with digital maps</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">Surveying</span>
+                <span class="tag">Cartography</span>
+                <span class="tag">Mapping</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <button class="btn-link project-detail-btn" data-project="4">
+                <span>View Details</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="projects-note reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>Project cards can be updated or customized with project URLs and deliverables as new data is
+            compiled.</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="section experience-section">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>Career Path</span>
+          </div>
+          <h2 class="section-title">Work Experience</h2>
+          <p class="section-subtitle">Practical industry engagement applying surveying instruments and spatial
+            methodologies.</p>
+        </div>
+
+        <!-- Vertical Timeline -->
+        <div class="timeline-wrapper">
+          <div class="timeline-line"></div>
+
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item reveal">
+            <div class="timeline-marker">
+              <div class="timeline-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+            </div>
+
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-tag">Construction & Contracting</span>
+                  <h3 class="timeline-role">Site Surveying & GIS Trainee</h3>
+                  <h4 class="timeline-company">Manour Mansour Contracting – Al-Qatamiya</h4>
+                </div>
+                <div class="timeline-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Al-Qatamiya, Egypt</span>
+                </div>
+              </div>
+
+              <div class="timeline-body">
+                <p class="timeline-desc">
+                  Gained intensive hands-on experience in modern construction and contracting techniques, directly
+                  contributing to site execution and spatial measurements:
+                </p>
+
+                <ul class="timeline-bullets">
+                  <li>
+                    <strong>Practical Surveying Operations:</strong> Executed field leveling, elevation checks, and
+                    benchmark referencing on active construction sites.
+                  </li>
+                  <li>
+                    <strong>GIS Applications on Site:</strong> Applied geographic data and spatial coordination to
+                    support contracting workflows and site layout planning.
+                  </li>
+                  <li>
+                    <strong>Construction Techniques:</strong> Developed practical understanding of structural setting
+                    out, site safety standards, and contracting operations.
+                  </li>
+                  <li>
+                    <strong>Team Collaboration:</strong> Worked closely with project engineers, site supervisors, and
+                    survey teams to ensure measurement accuracy.
+                  </li>
+                </ul>
+
+                <div class="timeline-skills">
+                  <span class="chip">Construction Techniques</span>
+                  <span class="chip">Surveying</span>
+                  <span class="chip">GIS Applications</span>
+                  <span class="chip">Field Operations</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="section education-section">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>Academic Background</span>
+          </div>
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">Foundational academic qualifications in surveying, cartography, and GIS.</p>
+        </div>
+
+        <div class="education-card-wrap reveal">
+          <div class="education-card">
+
+            <div class="edu-top">
+              <div class="edu-badge-row">
+                <span class="edu-grade-badge">Grade: Very Good</span>
+                <span class="edu-year-badge">Class of 2023</span>
+              </div>
+              <div class="edu-crest-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+            </div>
+
+            <div class="edu-body">
+              <h3 class="edu-degree">Bachelor of Arts in Surveying, Maps, and Geographic Information Systems (GIS)</h3>
+              <h4 class="edu-institution">Mansoura University – Faculty of Arts</h4>
+              <p class="edu-location">Mansoura, Dakahlia, Egypt</p>
+
+              <div class="edu-divider"></div>
+
+              <div class="edu-curriculum-overview">
+                <h5 class="curriculum-title">Core Academic Study Areas:</h5>
+                <div class="curriculum-grid">
+                  <div class="curriculum-item">
+                    <span class="cur-dot"></span>
+                    <span>Geographic Information Systems (GIS)</span>
+                  </div>
+                  <div class="curriculum-item">
+                    <span class="cur-dot"></span>
+                    <span>Plane & Topographic Surveying</span>
+                  </div>
+                  <div class="curriculum-item">
+                    <span class="cur-dot"></span>
+                    <span>Cartography & Digital Map Compilation</span>
+                  </div>
+                  <div class="curriculum-item">
+                    <span class="cur-dot"></span>
+                    <span>Geographic & Spatial Data Analysis</span>
+                  </div>
+                  <div class="curriculum-item">
+                    <span class="cur-dot"></span>
+                    <span>Geodesy & Coordinate Systems</span>
+                  </div>
+                  <div class="curriculum-item">
+                    <span class="cur-dot"></span>
+                    <span>Surveying Instrument Calibration</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRAINING SECTION -->
+    <section id="training" class="section training-section">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>Professional Growth</span>
+          </div>
+          <h2 class="section-title">Training & Courses</h2>
+          <p class="section-subtitle">Specialized training programs enhancing technical surveying and spatial data
+            capabilities.</p>
+        </div>
+
+        <div class="training-grid">
+
+          <!-- Course 1 -->
+          <div class="training-card reveal">
+            <div class="training-card-header">
+              <div class="training-date-pill">August 2022</div>
+              <div class="training-type">Instrument Certification</div>
+            </div>
+
+            <div class="training-card-body">
+              <div class="training-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M12 3v18"></path>
+                  <path d="M3 12h18"></path>
+                </svg>
+              </div>
+
+              <h3 class="training-title">Training Course on Surveying Instruments (LEVEL)</h3>
+              <p class="training-desc">
+                Intensive field training on the setup, calibration, and precise operation of optical leveling
+                instruments (LEVEL) for civil and topographic measurement tasks.
+              </p>
+
+              <div class="training-topics-block">
+                <h4 class="topics-label">Key Competencies Acquired:</h4>
+                <ul class="training-list">
+                  <li>Instrument leveling, optical sight collimation, and parallax adjustment</li>
+                  <li>Differential and profile leveling techniques</li>
+                  <li>Elevation calculation and benchmark transfer</li>
+                  <li>Error adjustment and precision verification</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="training-card-footer">
+              <span class="badge-tag">Surveying Instruments</span>
+              <span class="badge-tag">LEVEL</span>
+            </div>
+          </div>
+
+          <!-- Course 2 -->
+          <div class="training-card reveal">
+            <div class="training-card-header">
+              <div class="training-date-pill">August 2022</div>
+              <div class="training-type">Professional Workshop</div>
+            </div>
+
+            <div class="training-card-body">
+              <div class="training-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+
+              <h3 class="training-title">Workshop on GIS as a Career Path</h3>
+              <p class="training-desc">
+                Comprehensive specialized workshop focused on modern GIS career competencies, spatial analytical
+                workflows, and industry-grade application methods.
+              </p>
+
+              <div class="training-topics-block">
+                <h4 class="topics-label">Covered Workshop Topics:</h4>
+                <ul class="training-list">
+                  <li>Fundamentals of maps and surveying</li>
+                  <li>GIS skill development & practical project applications</li>
+                  <li>Geographic data analysis & spatial problem solving</li>
+                  <li>Construction techniques & site spatial management</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="training-card-footer">
+              <span class="badge-tag">GIS Development</span>
+              <span class="badge-tag">Career Workshop</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section id="achievements" class="section achievements-section">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>Milestones</span>
+          </div>
+          <h2 class="section-title">Honors & Achievements</h2>
+          <p class="section-subtitle">Key academic accomplishments, project recognitions, and collaborative
+            contributions.</p>
+        </div>
+
+        <div class="achievements-grid">
+
+          <!-- Achievement 1 -->
+          <div class="achievement-card reveal">
+            <div class="achieve-num">01</div>
+            <div class="achieve-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <h3 class="achieve-title">Academic Distinction</h3>
+            <p class="achieve-desc">
+              Graduated with a <strong>Very Good</strong> grade in GIS and Surveying from Mansoura University,
+              demonstrating consistent academic dedication across all coursework.
+            </p>
+          </div>
+
+          <!-- Achievement 2 -->
+          <div class="achievement-card reveal">
+            <div class="achieve-num">02</div>
+            <div class="achieve-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+            </div>
+            <h3 class="achieve-title">University Project Showcase</h3>
+            <p class="achieve-desc">
+              Developed and presented significant <strong>GIS projects</strong> during university studies, earning
+              positive faculty appraisal for spatial accuracy and cartography.
+            </p>
+          </div>
+
+          <!-- Achievement 3 -->
+          <div class="achievement-card reveal">
+            <div class="achieve-num">03</div>
+            <div class="achieve-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="achieve-title">Cartographic Forums</h3>
+            <p class="achieve-desc">
+              Participated actively in specialized workshops and discussions to enhance <strong>cartography and GIS
+                knowledge</strong> alongside faculty and peers.
+            </p>
+          </div>
+
+          <!-- Achievement 4 -->
+          <div class="achievement-card reveal">
+            <div class="achieve-num">04</div>
+            <div class="achieve-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="achieve-title">Award-Winning Research</h3>
+            <p class="achieve-desc">
+              Collaborated on a group research project on <strong>GIS applications</strong>, earning formal recognition
+              and awards for methodological excellence.
+            </p>
+          </div>
+
+          <!-- Achievement 5 -->
+          <div class="achievement-card reveal">
+            <div class="achieve-num">05</div>
+            <div class="achieve-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="achieve-title">GIS Application Development</h3>
+            <p class="achieve-desc">
+              Contributed effectively to university projects developing <strong>GIS-based applications</strong> for
+              spatial query management and thematic visualization.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-kicker">
+            <span class="kicker-line"></span>
+            <span>Get in Touch</span>
+          </div>
+          <h2 class="section-title">Contact & Communication</h2>
+          <p class="section-subtitle">Reach out for professional GIS opportunities, surveying projects, or collaborative
+            inquiries.</p>
+        </div>
+
+        <div class="contact-grid">
+
+          <!-- Contact Info Column -->
+          <div class="contact-info-col reveal">
+            <div class="contact-info-card">
+
+              <div class="contact-card-header">
+                <div class="contact-avatar-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="contact-name">Ahmed Fouda</h3>
+                  <p class="contact-title">GIS & Surveying Specialist</p>
+                </div>
+              </div>
+
+              <div class="contact-items-list">
+
+                <a href="mailto:fouda2563@gmail.com" class="contact-item">
+                  <div class="contact-icon-bubble">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <span class="contact-label">Email Address</span>
+                    <span class="contact-value">fouda2563@gmail.com</span>
+                  </div>
+                </a>
+
+                <div class="contact-item">
+                  <div class="contact-icon-bubble">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <span class="contact-label">Location & Region</span>
+                    <span class="contact-value">Dakahlia, Egypt</span>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon-bubble">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <span class="contact-label">Military Status</span>
+                    <span class="contact-value">Completed</span>
+                  </div>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="contact-form-col reveal">
+            <div class="form-container">
+              <h3 class="form-title">Send a Message</h3>
+              <p class="form-subtitle">Fill out the details below and I will respond promptly.</p>
+
+              <form id="contactForm" class="contact-form" novalidate>
+                <div class="form-group">
+                  <label for="userName" class="form-label">Full Name <span class="req">*</span></label>
+                  <div class="input-wrap">
+                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <input type="text" id="userName" name="name" class="form-input"
+                      placeholder="e.g. Eng. Mohamed Hassan" required>
+                  </div>
+                  <span class="form-error" id="nameError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="userEmail" class="form-label">Email Address <span class="req">*</span></label>
+                  <div class="input-wrap">
+                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <input type="email" id="userEmail" name="email" class="form-input" placeholder="name@company.com"
+                      required>
+                  </div>
+                  <span class="form-error" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="userMessage" class="form-label">Your Message <span class="req">*</span></label>
+                  <div class="input-wrap">
+                    <textarea id="userMessage" name="message" class="form-input form-textarea" rows="5"
+                      placeholder="Describe the surveying or GIS project, role requirements, or general inquiry..."
+                      required></textarea>
+                  </div>
+                  <span class="form-error" id="messageError"></span>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn btn-primary w-full">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  <span>Send Message</span>
+                </button>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="footer-name">Ahmed Fouda</h3>
+            <p class="footer-role">GIS & Surveying Specialist</p>
+          </div>
+        </div>
+
+        <div class="footer-coordinates">
+          <span class="footer-coord-badge">
+            <span class="coord-dot"></span>
+            (Dakahlia, EG)
+          </span>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; <span id="currentYear">2026</span> Ahmed Fouda. All rights reserved. Crafted with pure HTML, CSS, &amp;
+          Vanilla JavaScript.
+        </p>
+
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Back to Top Button -->
+        <a href="#home" class="back-to-top" aria-label="Back to top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- PROJECT DETAILS & EDIT MODAL -->
+  <div id="projectModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-badge-row">
+          <span class="modal-category" id="modalCategory">GIS Project</span>
+          <span class="modal-coords">31°02' N, 31°23' E</span>
+        </div>
+        <h3 class="modal-title" id="modalTitle">Project Title</h3>
+        <button id="modalCloseBtn" class="modal-close" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4 class="modal-section-title">Overview & Objectives</h4>
+          <p id="modalDescription" class="modal-desc">Project details and spatial methodology.</p>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">Key Methodologies & Tools</h4>
+          <div id="modalTags" class="modal-tags-wrap"></div>
+        </div>
+
+        <div class="modal-section edit-box-hint">
+          <div class="hint-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <p>
+            This card is structured for easy updates. You can directly edit project content in <code>index.html</code>
+            or <code>script.js</code> to link live maps or project URLs.
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="modalDoneBtn" class="btn btn-primary btn-sm">Close View</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CV PREVIEW / PRINT MODAL -->
+  <div id="cvModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-dialog cv-modal-dialog">
+      <div class="modal-header cv-modal-header">
+        <div>
+          <h3 class="modal-title">Curriculum Vitae — Ahmed Fouda</h3>
+          <p class="modal-subtitle-text">GIS & Surveying Specialist • Dakahlia, Egypt</p>
+        </div>
+        <button id="cvModalCloseBtn" class="modal-close" aria-label="Close CV Modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body cv-printable-body" id="printableCv">
+        <!-- Printable CV Layout -->
+        <div class="cv-sheet">
+          <div class="cv-header">
+            <div>
+              <h1 class="cv-name">Ahmed Fouda</h1>
+              <p class="cv-role-title">GIS &amp; Surveying Specialist</p>
+            </div>
+            <div class="cv-contact-info">
+              <p>Email: fouda2563@gmail.com</p>
+              <p>Location: Dakahlia, Egypt</p>
+              <p>Military Status: Completed</p>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Professional Summary</h2>
+            <p>
+              GIS and Surveying graduate with practical knowledge in geographic data analysis, mapping, surveying, and
+              geographic information systems. Graduated with a Very Good grade from Mansoura University with hands-on
+              site experience in construction contracting and leveling instruments.
+            </p>
+          </div>
+
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Education</h2>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>Bachelor of Arts in Surveying, Maps, and Geographic Information Systems (GIS)</strong>
+                <span>Graduation: 2023 | Grade: Very Good</span>
+              </div>
+              <p class="cv-sub">Mansoura University – Faculty of Arts, Mansoura, Egypt</p>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Work Experience</h2>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>Site Surveying &amp; GIS Trainee</strong>
+                <span>Al-Qatamiya, Egypt</span>
+              </div>
+              <p class="cv-sub">Manour Mansour Contracting</p>
+              <ul>
+                <li>Gained hands-on experience in construction and contracting techniques.</li>
+                <li>Applied practical skills in surveying and GIS operations on site.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Training &amp; Courses</h2>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>Training Course on Surveying Instruments (LEVEL)</strong>
+                <span>August 2022</span>
+              </div>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <strong>Workshop on GIS as a Career Path</strong>
+                <span>August 2022</span>
+              </div>
+              <p class="cv-sub">Topics: Fundamentals of maps and surveying, GIS skill development, Practical project
+                applications, Geographic data analysis, Construction techniques.</p>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Technical Skills</h2>
+            <p>GIS Software, Data Analysis, Geographic Data Utilization, Surveying, Surveying Instruments, Microsoft
+              Word, Microsoft Excel, Microsoft PowerPoint.</p>
+          </div>
+
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Soft Skills</h2>
+            <p>Teamwork, Problem-solving, Leadership, Creativity, Time Management, Communication, Responsibility,
+              Flexibility.</p>
+          </div>
+
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Key Achievements</h2>
+            <ul>
+              <li>Graduated with a Very Good grade in GIS and Surveying.</li>
+              <li>Developed and presented significant GIS projects during university studies.</li>
+              <li>Participated in workshops and discussions to enhance cartography and GIS knowledge.</li>
+              <li>Collaborated on a group research project on GIS applications, earning recognition and awards.</li>
+              <li>Contributed to university projects developing GIS-based applications.</li>
+            </ul>
+          </div>
+
+          <div class="cv-section">
+            <h2 class="cv-sec-title">Languages</h2>
+            <p>Arabic (Native), English (Intermediate).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer cv-modal-footer">
+        <button id="printCvBtn" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print / Save as PDF</span>
+        </button>
+        <button id="cvModalCloseBtn2" class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="alert" aria-live="polite">
+    <div class="toast-icon" id="toastIcon"></div>
+    <div class="toast-text" id="toastText">Notification message</div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
